@@ -21,19 +21,6 @@ It is a learning and portfolio project. It is **not** an automotive-certified sa
 - Risk score from 0 to 100 (engineering indicator)
 - Streamlit dashboard
 
-## Architecture
-
-```
-Webcam -> OpenCV frame
-   |-> MediaPipe face landmarks -> EAR / MAR / head pose / blink tracking --> Drowsiness engine --|
-   |-> YOLO (every Nth frame)   -> phone detection -> temporal confirmation -> phone state -------|
-                                                                                                  v
-                                           Risk assessment -> Alert state machine
-                                                  -> Visual overlay + Voice alert + Event log
-```
-
-`DriveSafePipeline` in `app/main.py` runs this chain for one frame. The local OpenCV app and the Streamlit dashboard both use it, so they behave the same.
-
 ## Computer Vision
 
 - **MediaPipe Face Landmarker** finds 468 facial landmarks per frame. If several faces are visible, the largest one (closest to the camera) is treated as the driver.
