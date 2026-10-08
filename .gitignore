@@ -1,0 +1,26 @@
+# Environments
+.venv/
+.env
+*.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Runtime logs (keep the folder, not the data)
+data/logs/*.csv
+
+# Model files: download them yourself (see README)
+models/*.pt
+models/*.task
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
