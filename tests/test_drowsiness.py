@@ -1,9 +1,3 @@
-"""Unit tests. Synthetic values and explicit timestamps only: no webcam, no
-MediaPipe model, no YOLO weights and no audio device are needed.
-
-Run with:  python -m pytest
-"""
-
 from __future__ import annotations
 
 import csv
@@ -118,7 +112,7 @@ def test_status_priority_order():
     assert combine_status(DriverState.AWAKE, PhoneState.PHONE_DETECTED) == OverallStatus.AWAKE
 
 
-# --- 7. Risk bounds ------------------------------------------------------------
+# --- 7. Risk bounds ---------------
 def test_risk_score_stays_between_0_and_100():
     detector = DrowsinessDetector()
     rng = np.random.default_rng(0)
@@ -139,7 +133,7 @@ def test_risk_score_stays_between_0_and_100():
         assert 0.0 <= result.risk_score <= 100.0
 
 
-# --- 8. Alert cooldown ---------------------------------------------------------
+# --- 8. Alert cooldown ------------------------
 class FakeClock:
     def __init__(self):
         self.now = 100.0
