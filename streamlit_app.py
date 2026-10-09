@@ -1,15 +1,4 @@
-"""Streamlit dashboard (demo / deployment interface).
 
-Two modes:
-  * Live webcam (local): reads the camera of the machine running Streamlit and
-    updates the dashboard continuously. Use this when running locally.
-  * Camera snapshot: analyses single photos taken in the browser. This is the
-    cloud-friendly mode, but one photo cannot show eye closure over time, so
-    temporal alerts do not build up. The local OpenCV app (python -m app.main)
-    remains the primary real-time demo.
-
-Run with:  streamlit run streamlit_app.py
-"""
 
 from __future__ import annotations
 
